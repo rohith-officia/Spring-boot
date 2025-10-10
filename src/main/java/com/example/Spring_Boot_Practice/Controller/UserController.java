@@ -59,6 +59,11 @@ public class UserController {
     public void delete(@PathVariable long id){
         userRepository.deleteById(id);
     }
+
+    @DeleteMapping("/deleteAll")
+    public void deleteAll(){
+        userRepository.deleteAll();
+    }
 }
 
 
