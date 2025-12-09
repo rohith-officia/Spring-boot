@@ -16,12 +16,14 @@ public class UserController {
 
     @GetMapping("/details/{id}")
     public UserEntity details(@PathVariable long id){
+
         return userRepository.findById(id).orElse(null);
     }
 
     @PostMapping("/createUser")
     public UserEntity createUser(@RequestBody UserEntity user){
-        return userRepository.save(user);
+
+        return userRepository.save(user);//post
     }
 
     @PutMapping("/updateUser/{id}")
@@ -57,6 +59,7 @@ public class UserController {
 
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable long id){
+
         userRepository.deleteById(id);
     }
 
