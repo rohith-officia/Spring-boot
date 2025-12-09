@@ -20,7 +20,7 @@ public class UserController {
         return userRepository.findById(id).orElse(null);
     }
 
-    @PostMapping("/createUser")
+    @PostMapping("/createUser")// creating user
     public UserEntity createUser(@RequestBody UserEntity user){
 
         return userRepository.save(user);//post
